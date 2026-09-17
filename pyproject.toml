@@ -1,0 +1,50 @@
+[project]
+name = "video-agent-editor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "jomkeu", email = "74103004+jomkeu3369@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+
+dependencies = [
+    "cv>=1.0.0",
+    "datasets>=5.0.1",
+    "einops>=0.8.2",
+    "ffmpeg-python>=0.2.0",
+    "kornia>=0.8.3",
+    "langchain>=1.4.1",
+    "langchain-openai>=1.6.2",
+    "langchain-teddynote>=0.5.4",
+    "langgraph>=1.2.11",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "opencv-contrib-python>=5.0.0.93",
+    "opencv-python>=5.0.0.93",
+    "pillow>=12.3.0",
+    "scenedetect>=0.7.1",
+    "timm>=1.0.29",
+    "torch>=2.14.0",
+    "torchvision>=0.29.0",
+    "transformers>=5.17.0",
+    "ultralytics>=8.4.154",
+]
+
+[project.scripts]
+video-agent-editor = "video_agent_editor:main"
+
+[build-system]
+requires = ["uv_build>=0.12.14,<0.13.0"]
+build-backend = "uv_build"
+
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
